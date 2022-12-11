@@ -120,7 +120,7 @@ def viewReports():
     rows = cur.execute('''Select author, sum(copiesSold) as copies, sum(copiesSold * sellPrice) as gross, sum((copiesSold * sellPrice)-copiesSold * sellPrice * (PublisherSalesCut)/100) as pub
                             From book
                             Group By author''').fetchall()
-    print("\Author Reports:")
+    print("\nAuthor Reports:")
     for row in rows:
         print("Author: "+ str(row[0]))
         print("Copies Sold: "+ str(row[1]))
